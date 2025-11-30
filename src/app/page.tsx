@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useUIStore } from '@/store/ui';
 
 const taglines = [
-  'I THOUGHT LIFE WAS FULL OF KOLOR',
-  "WHAT'S LIFE WITHOUT KOLOR",
-  'NO KOLOR JUST REALITY',
+  'i thought life was full of kolor',
+  "what's life without kolor",
+  'no kolor just reality',
 ];
 
 // The tracksuit product
@@ -203,7 +203,7 @@ export default function Home() {
                   transition={{ delay: 0.6 }}
                   className="font-mono text-[10px] tracking-widest text-grey-mid text-right"
                 >
-                  SS25
+                  ss25
                 </motion.div>
               </div>
 
@@ -212,9 +212,9 @@ export default function Home() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.3, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                  className="font-display text-[28vw] md:text-[22vw] leading-[0.8] tracking-tight text-black"
+                  className="font-display text-[19vw] md:text-[15vw] leading-[0.8] tracking-tight text-black"
                 >
-                  KOLOR
+                  kolor
                 </motion.h1>
 
                 <div className="h-8 mt-6 overflow-hidden">
@@ -246,7 +246,7 @@ export default function Home() {
                     className="w-2 h-2 rounded-full bg-black mb-4"
                   />
                   <p className="font-mono text-[9px] tracking-[0.3em] text-grey-mid">
-                    CLICK TO ADD KOLOR
+                    click to add kolor
                   </p>
                 </div>
               </motion.div>
@@ -296,21 +296,21 @@ export default function Home() {
                 transition={{ delay: 0.5 }}
                 className="font-mono text-[10px] tracking-[0.5em] text-grey-mid mb-6"
               >
-                ADDING KOLOR TO REALITY
+                adding kolor to reality
               </motion.p>
               
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
-                className="font-display text-6xl md:text-8xl"
+                className="font-display text-5xl md:text-6xl"
               >
                 <motion.span
                   initial={{ color: '#666666' }}
                   animate={{ color: '#722F37' }}
                   transition={{ delay: 1.2, duration: 0.8 }}
                 >
-                  KOLOR
+                  kolor
                 </motion.span>
               </motion.div>
 
@@ -320,7 +320,7 @@ export default function Home() {
                 transition={{ delay: 1.5 }}
                 className="font-serif italic text-lg text-black mt-6"
               >
-                I thought life was full of kolor
+                i thought life was full of kolor
               </motion.p>
             </div>
 
@@ -345,12 +345,12 @@ export default function Home() {
           >
             {/* Header */}
             <header className="fixed top-0 left-0 right-0 z-50 p-6 md:p-10 flex justify-between items-center">
-              <span className="font-display text-xl text-black">KOLOR</span>
+              <span className="font-display text-xl text-black">kolor</span>
               <button 
                 onClick={() => setCartOpen(true)}
                 className="font-mono text-[10px] tracking-widest text-black hover:opacity-70 transition-opacity"
               >
-                BAG ({cartCount})
+                bag ({cartCount})
               </button>
             </header>
 
@@ -392,7 +392,7 @@ export default function Home() {
                           : 'text-grey-mid hover:text-black'
                       }`}
                     >
-                      HOODIE
+                      hoodie
                     </button>
                     <button
                       onClick={() => setCurrentImage('pants')}
@@ -402,7 +402,7 @@ export default function Home() {
                           : 'text-grey-mid hover:text-black'
                       }`}
                     >
-                      PANTS
+                      pants
                     </button>
                   </div>
                   <p className="font-mono text-[9px] tracking-[0.2em] text-grey-mid">
@@ -428,16 +428,16 @@ export default function Home() {
                     transition={{ delay: 0.7 }}
                     className="font-mono text-[10px] tracking-widest text-grey-mid mb-4"
                   >
-                    SS25 — FULL SET
+                    ss25 — full set
                   </motion.p>
                   
                   <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8 }}
-                    className="font-display text-5xl md:text-6xl lg:text-7xl mb-4"
+                    className="font-display text-4xl md:text-5xl lg:text-5xl mb-4"
                   >
-                    {product.name}
+                    kolor tracksuit
                   </motion.h1>
 
                   <motion.p
@@ -466,7 +466,7 @@ export default function Home() {
                     className="mb-8"
                   >
                     <p className="font-mono text-[10px] tracking-widest text-grey-mid mb-4">
-                      COLOR
+                      color
                     </p>
                     <div className="flex gap-3">
                       {product.colors.map((color, i) => (
@@ -499,7 +499,7 @@ export default function Home() {
                     className="mb-12"
                   >
                     <p className="font-mono text-[10px] tracking-widest text-grey-mid mb-4">
-                      SIZE
+                      size
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {product.sizes.map((size) => (
@@ -545,7 +545,7 @@ export default function Home() {
                             transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
                             className="w-4 h-4 border-2 border-white border-t-transparent rounded-full"
                           />
-                          ADDING...
+                          adding...
                         </motion.span>
                       ) : addedFeedback ? (
                         <motion.span
@@ -558,7 +558,7 @@ export default function Home() {
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
-                          ADDED TO BAG
+                          added to bag
                         </motion.span>
                       ) : (
                         <motion.span
@@ -567,7 +567,7 @@ export default function Home() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -20 }}
                         >
-                          {selectedSize ? 'ADD TO BAG — $' + product.price : 'SELECT SIZE'}
+                          {selectedSize ? 'add to bag — $' + product.price : 'select size'}
                         </motion.span>
                       )}
                     </AnimatePresence>
@@ -579,7 +579,7 @@ export default function Home() {
                     transition={{ delay: 1.4 }}
                     className="font-mono text-[10px] text-grey-mid text-center mt-6"
                   >
-                    FREE WORLDWIDE SHIPPING • 30 DAY RETURNS
+                    free worldwide shipping • 30 day returns
                   </motion.p>
 
                   {/* What's Included */}
@@ -590,12 +590,12 @@ export default function Home() {
                     className="mt-8 pt-6 border-t border-grey-pale"
                   >
                     <p className="font-mono text-[10px] tracking-widest text-grey-mid mb-3">
-                      INCLUDES
+                      includes
                     </p>
                     <ul className="font-mono text-[11px] text-grey-light space-y-1">
-                      <li>• Zip-up hoodie with KC monogram</li>
-                      <li>• Matching sweatpants</li>
-                      <li>• Dust bag</li>
+                      <li>• zip-up hoodie with kc monogram</li>
+                      <li>• matching sweatpants</li>
+                      <li>• dust bag</li>
                     </ul>
                   </motion.div>
                 </div>
@@ -626,16 +626,16 @@ export default function Home() {
             >
               <div className="flex items-center justify-between p-6 border-b border-grey-pale">
                 <div>
-                  <h2 className="font-display text-2xl">BAG</h2>
+                  <h2 className="font-display text-2xl">bag</h2>
                   <p className="font-mono text-[10px] tracking-widest text-grey-mid mt-1">
-                    {cartCount} {cartCount === 1 ? 'ITEM' : 'ITEMS'}
+                    {cartCount} {cartCount === 1 ? 'item' : 'items'}
                   </p>
                 </div>
                 <button
                   onClick={() => setCartOpen(false)}
                   className="font-mono text-[10px] tracking-widest text-grey-mid hover:text-black transition-colors"
                 >
-                  CLOSE
+                  close
                 </button>
               </div>
 
@@ -648,16 +648,16 @@ export default function Home() {
                       </svg>
                     </div>
                     <p className="font-mono text-[11px] tracking-widest text-grey-mid mb-2">
-                      YOUR BAG IS EMPTY
+                      your bag is empty
                     </p>
                     <p className="font-mono text-[10px] text-grey-mid mb-6">
-                      Add some kolor to your life
+                      add some kolor to your life
                     </p>
                     <button
                       onClick={() => setCartOpen(false)}
                       className="font-mono text-[10px] tracking-widest text-black underline hover:text-[#722F37] transition-colors"
                     >
-                      CONTINUE SHOPPING
+                      continue shopping
                     </button>
                   </div>
                 ) : (
@@ -714,7 +714,7 @@ export default function Home() {
                               onClick={() => removeItem(item.id)}
                               className="font-mono text-[9px] tracking-widest text-grey-mid hover:text-[#722F37] transition-colors"
                             >
-                              REMOVE
+                              remove
                             </button>
                           </div>
                         </div>
@@ -728,25 +728,25 @@ export default function Home() {
                 <div className="p-6 border-t border-grey-pale">
                   <div className="flex items-center justify-between mb-2">
                     <span className="font-mono text-[10px] tracking-widest text-grey-mid">
-                      SUBTOTAL
+                      subtotal
                     </span>
                     <span className="font-display text-2xl">
                       ${cartTotal}
                     </span>
                   </div>
                   <p className="font-mono text-[9px] text-grey-mid mb-6">
-                    SHIPPING CALCULATED AT CHECKOUT
+                    shipping calculated at checkout
                   </p>
                   
                   <button className="w-full py-4 bg-black text-white font-mono text-[11px] tracking-widest hover:bg-[#722F37] hover:text-white transition-colors mb-3">
-                    CHECKOUT
+                    checkout
                   </button>
                   
                   <button
                     onClick={() => setCartOpen(false)}
                     className="w-full py-4 border border-grey-pale text-black font-mono text-[10px] tracking-widest hover:border-black transition-colors"
                   >
-                    CONTINUE SHOPPING
+                    continue shopping
                   </button>
                 </div>
               )}
