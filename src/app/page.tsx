@@ -193,7 +193,7 @@ export default function Home() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
-                  className="font-display text-xs tracking-widest text-grey-mid italic"
+                  className="font-mono text-[10px] tracking-widest text-grey-mid"
                 >
                   {time}
                 </motion.div>
@@ -201,9 +201,9 @@ export default function Home() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.6 }}
-                  className="font-display text-xs tracking-widest text-grey-mid text-right italic lowercase"
+                  className="font-mono text-[10px] tracking-widest text-grey-mid text-right"
                 >
-                  ss25
+                  SS25
                 </motion.div>
               </div>
 
@@ -212,12 +212,12 @@ export default function Home() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.3, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                  className="font-display text-[18vw] md:text-[14vw] leading-[0.9] tracking-wide text-white lowercase italic"
+                  className="font-display text-[28vw] md:text-[22vw] leading-[0.8] tracking-tight text-white"
                 >
-                  kolor
+                  KOLOR
                 </motion.h1>
 
-                <div className="h-8 mt-8 overflow-hidden">
+                <div className="h-8 mt-6 overflow-hidden">
                   <AnimatePresence mode="wait">
                     <motion.p
                       key={currentTagline}
@@ -225,9 +225,9 @@ export default function Home() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -20 }}
                       transition={{ duration: 0.5 }}
-                      className="font-display text-sm md:text-base tracking-[0.15em] text-grey-light italic lowercase"
+                      className="font-mono text-[10px] md:text-[11px] tracking-[0.3em] text-grey-light"
                     >
-                      {taglines[currentTagline].toLowerCase()}
+                      {taglines[currentTagline]}
                     </motion.p>
                   </AnimatePresence>
                 </div>
@@ -245,8 +245,8 @@ export default function Home() {
                     transition={{ duration: 2, repeat: Infinity }}
                     className="w-2 h-2 rounded-full bg-white mb-4"
                   />
-                  <p className="font-display text-xs tracking-[0.2em] text-grey-mid italic lowercase">
-                    click to add kolor
+                  <p className="font-mono text-[9px] tracking-[0.3em] text-grey-mid">
+                    CLICK TO ADD KOLOR
                   </p>
                 </div>
               </motion.div>
@@ -294,24 +294,23 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="font-display text-sm tracking-[0.3em] text-grey-mid mb-6 lowercase italic"
+                className="font-mono text-[10px] tracking-[0.5em] text-grey-mid mb-6"
               >
-                adding kolor to reality
+                ADDING KOLOR TO REALITY
               </motion.p>
               
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
-                className="font-display text-5xl md:text-7xl italic"
+                className="font-display text-6xl md:text-8xl"
               >
                 <motion.span
                   initial={{ color: '#666666' }}
                   animate={{ color: '#722F37' }}
                   transition={{ delay: 1.2, duration: 0.8 }}
-                  className="lowercase"
                 >
-                  kolor
+                  KOLOR
                 </motion.span>
               </motion.div>
 
@@ -319,9 +318,9 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5 }}
-                className="font-display italic text-lg text-white mt-6 lowercase"
+                className="font-serif italic text-lg text-white mt-6"
               >
-                i thought life was full of kolor
+                I thought life was full of kolor
               </motion.p>
             </div>
 
@@ -346,12 +345,12 @@ export default function Home() {
           >
             {/* Header */}
             <header className="fixed top-0 left-0 right-0 z-50 p-6 md:p-10 flex justify-between items-center mix-blend-difference">
-              <span className="font-display text-xl text-white italic lowercase">kolor</span>
+              <span className="font-display text-xl text-white">KOLOR</span>
               <button 
                 onClick={() => setCartOpen(true)}
-                className="font-display text-sm tracking-widest text-white hover:opacity-70 transition-opacity lowercase italic"
+                className="font-mono text-[10px] tracking-widest text-white hover:opacity-70 transition-opacity"
               >
-                bag ({cartCount})
+                BAG ({cartCount})
               </button>
             </header>
 
@@ -387,27 +386,27 @@ export default function Home() {
                   <div className="flex gap-6">
                     <button
                       onClick={() => setCurrentImage('hoodie')}
-                      className={`font-display text-xs tracking-widest transition-all duration-300 pb-1 lowercase italic ${
+                      className={`font-mono text-[10px] tracking-widest transition-all duration-300 pb-1 ${
                         currentImage === 'hoodie' 
                           ? 'text-white border-b border-white' 
                           : 'text-grey-mid hover:text-white'
                       }`}
                     >
-                      hoodie
+                      HOODIE
                     </button>
                     <button
                       onClick={() => setCurrentImage('pants')}
-                      className={`font-display text-xs tracking-widest transition-all duration-300 pb-1 lowercase italic ${
+                      className={`font-mono text-[10px] tracking-widest transition-all duration-300 pb-1 ${
                         currentImage === 'pants' 
                           ? 'text-white border-b border-white' 
                           : 'text-grey-mid hover:text-white'
                       }`}
                     >
-                      pants
+                      PANTS
                     </button>
                   </div>
-                  <p className="font-display text-[11px] tracking-[0.2em] text-grey-mid lowercase italic">
-                    {product.colors[selectedColor].name.toLowerCase()}
+                  <p className="font-mono text-[9px] tracking-[0.2em] text-grey-mid">
+                    {product.colors[selectedColor].name}
                   </p>
                 </div>
 
@@ -427,25 +426,25 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.7 }}
-                    className="font-display text-xs tracking-widest text-grey-mid mb-4 lowercase italic"
+                    className="font-mono text-[10px] tracking-widest text-grey-mid mb-4"
                   >
-                    ss25 — full set
+                    SS25 — FULL SET
                   </motion.p>
                   
                   <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8 }}
-                    className="font-display text-4xl md:text-5xl lg:text-6xl mb-4 lowercase italic"
+                    className="font-display text-5xl md:text-6xl lg:text-7xl mb-4"
                   >
-                    kolor tracksuit
+                    {product.name}
                   </motion.h1>
 
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.9 }}
-                    className="font-display text-2xl mb-8 italic"
+                    className="font-mono text-2xl mb-8"
                   >
                     ${product.price}
                   </motion.p>
@@ -454,7 +453,7 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1 }}
-                    className="font-display text-sm text-grey-light leading-relaxed mb-12"
+                    className="font-mono text-[12px] text-grey-light leading-relaxed mb-12"
                   >
                     {product.description}
                   </motion.p>
@@ -466,8 +465,8 @@ export default function Home() {
                     transition={{ delay: 1.1 }}
                     className="mb-8"
                   >
-                    <p className="font-display text-xs tracking-widest text-grey-mid mb-4 lowercase italic">
-                      color
+                    <p className="font-mono text-[10px] tracking-widest text-grey-mid mb-4">
+                      COLOR
                     </p>
                     <div className="flex gap-3">
                       {product.colors.map((color, i) => (
@@ -499,15 +498,15 @@ export default function Home() {
                     transition={{ delay: 1.2 }}
                     className="mb-12"
                   >
-                    <p className="font-display text-xs tracking-widest text-grey-mid mb-4 lowercase italic">
-                      size
+                    <p className="font-mono text-[10px] tracking-widest text-grey-mid mb-4">
+                      SIZE
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {product.sizes.map((size) => (
                         <button
                           key={size}
                           onClick={() => setSelectedSize(size)}
-                          className={`w-14 h-14 font-display text-sm border transition-all duration-300 ${
+                          className={`w-14 h-14 font-mono text-[12px] border transition-all duration-300 ${
                             selectedSize === size
                               ? 'border-white bg-white text-black'
                               : 'border-grey-dark text-white hover:border-grey-mid'
@@ -526,7 +525,7 @@ export default function Home() {
                     transition={{ delay: 1.3 }}
                     onClick={handleAddToBag}
                     disabled={!selectedSize || isAdding}
-                    className={`relative w-full py-5 font-display text-sm tracking-widest transition-all duration-300 overflow-hidden lowercase italic ${
+                    className={`relative w-full py-5 font-mono text-[11px] tracking-widest transition-all duration-300 overflow-hidden ${
                       selectedSize
                         ? 'bg-white text-black hover:bg-[#722F37] hover:text-white'
                         : 'bg-grey-dark text-grey-mid cursor-not-allowed'
@@ -546,7 +545,7 @@ export default function Home() {
                             transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
                             className="w-4 h-4 border-2 border-black border-t-transparent rounded-full"
                           />
-                          adding...
+                          ADDING...
                         </motion.span>
                       ) : addedFeedback ? (
                         <motion.span
@@ -559,7 +558,7 @@ export default function Home() {
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
-                          added to bag
+                          ADDED TO BAG
                         </motion.span>
                       ) : (
                         <motion.span
@@ -568,7 +567,7 @@ export default function Home() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -20 }}
                         >
-                          {selectedSize ? 'add to bag — $' + product.price : 'select size'}
+                          {selectedSize ? 'ADD TO BAG — $' + product.price : 'SELECT SIZE'}
                         </motion.span>
                       )}
                     </AnimatePresence>
@@ -578,9 +577,9 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.4 }}
-                    className="font-display text-xs text-grey-mid text-center mt-6 lowercase italic"
+                    className="font-mono text-[10px] text-grey-mid text-center mt-6"
                   >
-                    free worldwide shipping • 30 day returns
+                    FREE WORLDWIDE SHIPPING • 30 DAY RETURNS
                   </motion.p>
 
                   {/* What's Included */}
@@ -590,13 +589,13 @@ export default function Home() {
                     transition={{ delay: 1.5 }}
                     className="mt-8 pt-6 border-t border-grey-dark"
                   >
-                    <p className="font-display text-xs tracking-widest text-grey-mid mb-3 lowercase italic">
-                      includes
+                    <p className="font-mono text-[10px] tracking-widest text-grey-mid mb-3">
+                      INCLUDES
                     </p>
-                    <ul className="font-display text-sm text-grey-light space-y-1 lowercase">
-                      <li>• zip-up hoodie with kc monogram</li>
-                      <li>• matching sweatpants</li>
-                      <li>• dust bag</li>
+                    <ul className="font-mono text-[11px] text-grey-light space-y-1">
+                      <li>• Zip-up hoodie with KC monogram</li>
+                      <li>• Matching sweatpants</li>
+                      <li>• Dust bag</li>
                     </ul>
                   </motion.div>
                 </div>
@@ -627,16 +626,16 @@ export default function Home() {
             >
               <div className="flex items-center justify-between p-6 border-b border-grey-dark">
                 <div>
-                  <h2 className="font-display text-2xl lowercase italic">bag</h2>
-                  <p className="font-display text-xs tracking-widest text-grey-mid mt-1 lowercase italic">
-                    {cartCount} {cartCount === 1 ? 'item' : 'items'}
+                  <h2 className="font-display text-2xl">BAG</h2>
+                  <p className="font-mono text-[10px] tracking-widest text-grey-mid mt-1">
+                    {cartCount} {cartCount === 1 ? 'ITEM' : 'ITEMS'}
                   </p>
                 </div>
                 <button
                   onClick={() => setCartOpen(false)}
-                  className="font-display text-xs tracking-widest text-grey-light hover:text-white transition-colors lowercase italic"
+                  className="font-mono text-[10px] tracking-widest text-grey-light hover:text-white transition-colors"
                 >
-                  close
+                  CLOSE
                 </button>
               </div>
 
@@ -648,17 +647,17 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                       </svg>
                     </div>
-                    <p className="font-display text-sm tracking-widest text-grey-mid mb-2 lowercase italic">
-                      your bag is empty
+                    <p className="font-mono text-[11px] tracking-widest text-grey-mid mb-2">
+                      YOUR BAG IS EMPTY
                     </p>
-                    <p className="font-display text-xs text-grey-mid mb-6 lowercase italic">
-                      add some kolor to your life
+                    <p className="font-mono text-[10px] text-grey-mid mb-6">
+                      Add some kolor to your life
                     </p>
                     <button
                       onClick={() => setCartOpen(false)}
-                      className="font-display text-xs tracking-widest text-white underline hover:text-[#722F37] transition-colors lowercase italic"
+                      className="font-mono text-[10px] tracking-widest text-white underline hover:text-[#722F37] transition-colors"
                     >
-                      continue shopping
+                      CONTINUE SHOPPING
                     </button>
                   </div>
                 ) : (
@@ -682,13 +681,13 @@ export default function Home() {
 
                         <div className="flex-1 flex flex-col justify-between py-1">
                           <div>
-                            <h3 className="font-display text-sm tracking-wider text-white lowercase italic">
-                              {item.name.toLowerCase()}
+                            <h3 className="font-mono text-[11px] tracking-wider text-white">
+                              {item.name}
                             </h3>
-                            <p className="font-display text-xs text-grey-mid mt-1 lowercase italic">
-                              {item.size} / {item.color.toLowerCase()}
+                            <p className="font-mono text-[10px] text-grey-mid mt-1">
+                              {item.size} / {item.color}
                             </p>
-                            <p className="font-display text-sm text-white mt-1 italic">
+                            <p className="font-mono text-[11px] text-white mt-1">
                               ${item.price}
                             </p>
                           </div>
@@ -697,25 +696,25 @@ export default function Home() {
                             <div className="flex items-center border border-grey-dark">
                               <button
                                 onClick={() => updateQuantity(item.id, -1)}
-                                className="w-8 h-8 flex items-center justify-center text-grey-light hover:text-white transition-colors font-display"
+                                className="w-8 h-8 flex items-center justify-center text-grey-light hover:text-white transition-colors"
                               >
                                 −
                               </button>
-                              <span className="w-8 text-center font-display text-sm">
+                              <span className="w-8 text-center font-mono text-[11px]">
                                 {item.quantity}
                               </span>
                               <button
                                 onClick={() => updateQuantity(item.id, 1)}
-                                className="w-8 h-8 flex items-center justify-center text-grey-light hover:text-white transition-colors font-display"
+                                className="w-8 h-8 flex items-center justify-center text-grey-light hover:text-white transition-colors"
                               >
                                 +
                               </button>
                             </div>
                             <button
                               onClick={() => removeItem(item.id)}
-                              className="font-display text-xs tracking-widest text-grey-mid hover:text-[#722F37] transition-colors lowercase italic"
+                              className="font-mono text-[9px] tracking-widest text-grey-mid hover:text-[#722F37] transition-colors"
                             >
-                              remove
+                              REMOVE
                             </button>
                           </div>
                         </div>
@@ -728,26 +727,26 @@ export default function Home() {
               {cart.length > 0 && (
                 <div className="p-6 border-t border-grey-dark">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="font-display text-xs tracking-widest text-grey-mid lowercase italic">
-                      subtotal
+                    <span className="font-mono text-[10px] tracking-widest text-grey-mid">
+                      SUBTOTAL
                     </span>
-                    <span className="font-display text-2xl italic">
+                    <span className="font-display text-2xl">
                       ${cartTotal}
                     </span>
                   </div>
-                  <p className="font-display text-xs text-grey-mid mb-6 lowercase italic">
-                    shipping calculated at checkout
+                  <p className="font-mono text-[9px] text-grey-mid mb-6">
+                    SHIPPING CALCULATED AT CHECKOUT
                   </p>
                   
-                  <button className="w-full py-4 bg-white text-black font-display text-sm tracking-widest hover:bg-[#722F37] hover:text-white transition-colors mb-3 lowercase italic">
-                    checkout
+                  <button className="w-full py-4 bg-white text-black font-mono text-[11px] tracking-widest hover:bg-[#722F37] hover:text-white transition-colors mb-3">
+                    CHECKOUT
                   </button>
                   
                   <button
                     onClick={() => setCartOpen(false)}
-                    className="w-full py-4 border border-grey-dark text-white font-display text-xs tracking-widest hover:border-white transition-colors lowercase italic"
+                    className="w-full py-4 border border-grey-dark text-white font-mono text-[10px] tracking-widest hover:border-white transition-colors"
                   >
-                    continue shopping
+                    CONTINUE SHOPPING
                   </button>
                 </div>
               )}
