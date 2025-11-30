@@ -342,43 +342,38 @@ export default function Home() {
             className="min-h-screen"
           >
             {/* Header */}
-            <header className="fixed top-0 left-0 right-0 z-50 px-8 md:px-16 py-6 md:py-8">
-              <div className="max-w-7xl mx-auto flex justify-between items-start">
-                {/* Empty left spacer for symmetry */}
-                <div className="w-24 md:w-32" />
-                
-                {/* Logo & Nav - Center */}
-                <div className="flex flex-col items-center">
-                  <img 
-                    src="/logo.png" 
-                    alt="KOLOR" 
-                    className="h-12 md:h-16 w-auto mb-3"
-                  />
-                  <nav className="flex justify-center gap-8 md:gap-12">
-                    <a 
-                      href="#about" 
-                      className="font-mono text-xs tracking-[0.2em] text-black hover:opacity-60 transition-opacity"
-                    >
-                      about
-                    </a>
-                    <a 
-                      href="#contact" 
-                      className="font-mono text-xs tracking-[0.2em] text-black hover:opacity-60 transition-opacity"
-                    >
-                      contact
-                    </a>
-                  </nav>
-                </div>
-                
-                {/* Bag - Right */}
-                <div className="w-24 md:w-32 flex justify-end">
-                  <button 
-                    onClick={() => setCartOpen(true)}
-                    className="font-mono text-xs tracking-[0.2em] text-black hover:opacity-60 transition-opacity"
+            <header className="fixed top-0 left-0 right-0 z-50 py-6 md:py-8">
+              {/* Logo & Nav - Centered at page split (50%) */}
+              <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
+                <img 
+                  src="/logo.png" 
+                  alt="KOLOR" 
+                  className="h-12 md:h-16 w-auto mb-2"
+                />
+                <nav className="flex justify-center gap-6 md:gap-10">
+                  <a 
+                    href="#about" 
+                    className="font-mono text-[11px] tracking-[0.2em] text-black hover:opacity-60 transition-opacity"
                   >
-                    bag{cartCount > 0 && ` (${cartCount})`}
-                  </button>
-                </div>
+                    about
+                  </a>
+                  <a 
+                    href="#contact" 
+                    className="font-mono text-[11px] tracking-[0.2em] text-black hover:opacity-60 transition-opacity"
+                  >
+                    contact
+                  </a>
+                </nav>
+              </div>
+              
+              {/* Bag - Right aligned */}
+              <div className="absolute right-8 md:right-16 top-6 md:top-8">
+                <button 
+                  onClick={() => setCartOpen(true)}
+                  className="font-mono text-[11px] tracking-[0.2em] text-black hover:opacity-60 transition-opacity"
+                >
+                  bag{cartCount > 0 && ` (${cartCount})`}
+                </button>
               </div>
             </header>
 
@@ -389,7 +384,7 @@ export default function Home() {
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="relative w-full lg:w-1/2 h-[60vh] lg:h-screen bg-white flex items-center justify-center"
+                className="relative w-full lg:w-1/2 h-[60vh] lg:h-screen bg-[#f0f0f0] flex items-center justify-center"
               >
                 {/* Image Container - Centered with fixed dimensions */}
                 <div className="relative w-full h-full flex items-center justify-center px-8 lg:px-16 py-24 lg:py-32">
