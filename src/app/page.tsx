@@ -187,7 +187,7 @@ export default function Home() {
               }}
             />
 
-            <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-10">
+            <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-10 pb-10 md:pb-14">
               <div className="flex justify-between items-start">
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -237,7 +237,7 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2 }}
-                className="flex justify-center mb-28 md:mb-36"
+                className="flex justify-center"
               >
                 <div className="flex flex-col items-center">
                   <motion.div
@@ -310,7 +310,7 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5 }}
-                className="font-serif text-lg text-black mt-6"
+                className="font-mono text-[11px] md:text-[12px] tracking-[0.3em] text-grey-light mt-6"
               >
                 life is full of kolor
               </motion.p>
