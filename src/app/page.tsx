@@ -225,7 +225,7 @@ export default function Home() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -20 }}
                       transition={{ duration: 0.5 }}
-                      className="font-mono text-[10px] md:text-[11px] tracking-[0.3em] text-grey-light"
+                      className="font-mono text-[11px] md:text-[12px] tracking-[0.3em] text-grey-light"
                     >
                       {taglines[currentTagline]}
                     </motion.p>
@@ -245,7 +245,7 @@ export default function Home() {
                     transition={{ duration: 2, repeat: Infinity }}
                     className="w-2 h-2 rounded-full bg-black mb-4"
                   />
-                  <p className="font-mono text-[9px] tracking-[0.3em] text-grey-mid">
+                  <p className="font-mono text-[11px] tracking-[0.3em] text-grey-mid">
                     click to add kolor
                   </p>
                 </div>
