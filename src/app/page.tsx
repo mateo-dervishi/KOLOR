@@ -342,47 +342,42 @@ export default function Home() {
             className="min-h-screen"
           >
             {/* Header */}
-            <header className="fixed top-0 left-0 right-0 z-50 px-6 md:px-10 py-4 md:py-6 flex justify-between items-center">
-              {/* Logo - Left */}
-              <div className="flex-1">
-                <img 
-                  src="/logo.png" 
-                  alt="KOLOR" 
-                  className="h-8 md:h-10 w-auto"
-                />
-              </div>
-              
-              {/* Nav Links - Center */}
-              <nav className="flex-1 flex justify-center gap-8 md:gap-12">
-                <a 
-                  href="#about" 
-                  className="font-mono text-base tracking-widest text-black hover:opacity-70 transition-opacity"
-                >
-                  about
-                </a>
-                <a 
-                  href="#contact" 
-                  className="font-mono text-base tracking-widest text-black hover:opacity-70 transition-opacity"
-                >
-                  contact
-                </a>
-              </nav>
-              
-              {/* Bag - Right */}
-              <div className="flex-1 flex justify-end">
-                <button 
-                  onClick={() => setCartOpen(true)}
-                  className="relative text-black hover:opacity-70 transition-opacity"
-                >
-                  <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                  </svg>
-                  {cartCount > 0 && (
-                    <span className="absolute -top-1 -right-1 w-4 h-4 bg-black text-white text-[9px] rounded-full flex items-center justify-center">
-                      {cartCount}
-                    </span>
-                  )}
-                </button>
+            <header className="fixed top-0 left-0 right-0 z-50 px-8 md:px-16 py-6 md:py-8">
+              <div className="max-w-7xl mx-auto flex justify-between items-center">
+                {/* Logo - Left */}
+                <div className="w-32 md:w-40">
+                  <img 
+                    src="/logo.png" 
+                    alt="KOLOR" 
+                    className="h-6 md:h-8 w-auto"
+                  />
+                </div>
+                
+                {/* Nav Links - Center */}
+                <nav className="flex justify-center gap-10 md:gap-16">
+                  <a 
+                    href="#about" 
+                    className="font-mono text-sm tracking-[0.15em] text-black hover:opacity-60 transition-opacity"
+                  >
+                    about
+                  </a>
+                  <a 
+                    href="#contact" 
+                    className="font-mono text-sm tracking-[0.15em] text-black hover:opacity-60 transition-opacity"
+                  >
+                    contact
+                  </a>
+                </nav>
+                
+                {/* Bag - Right */}
+                <div className="w-32 md:w-40 flex justify-end">
+                  <button 
+                    onClick={() => setCartOpen(true)}
+                    className="font-mono text-sm tracking-[0.15em] text-black hover:opacity-60 transition-opacity"
+                  >
+                    bag{cartCount > 0 && ` (${cartCount})`}
+                  </button>
+                </div>
               </div>
             </header>
 
@@ -451,9 +446,9 @@ export default function Home() {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
-                className="w-full lg:w-1/2 flex items-start justify-center p-8 md:p-12 lg:p-16 xl:p-20 bg-white overflow-y-auto"
+                className="w-full lg:w-1/2 flex items-center justify-center p-8 md:p-12 lg:p-16 xl:p-20 bg-white overflow-y-auto"
               >
-                <div className="w-full max-w-md pt-16 lg:pt-8">
+                <div className="w-full max-w-sm">
                   {/* Collection Tag */}
                   <motion.p
                     initial={{ opacity: 0 }}
