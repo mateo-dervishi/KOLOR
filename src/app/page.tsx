@@ -291,15 +291,6 @@ export default function Home() {
             />
 
             <div className="text-center">
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="font-mono text-[10px] tracking-[0.5em] text-grey-mid mb-6"
-              >
-                adding kolor to reality
-              </motion.p>
-              
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
