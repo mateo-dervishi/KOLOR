@@ -448,7 +448,7 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.7 }}
-                    className="font-mono text-xs tracking-[0.2em] text-grey-mid mb-3"
+                    className="font-mono text-xs tracking-[0.2em] text-grey-mid mb-4"
                   >
                     ss25 — full set
                   </motion.p>
@@ -458,7 +458,7 @@ export default function Home() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8 }}
-                    className="font-mono text-3xl md:text-4xl font-normal mb-2 tracking-tight"
+                    className="font-mono text-3xl md:text-4xl font-normal mb-4 tracking-tight"
                   >
                     kolor tracksuit
                   </motion.h1>
@@ -468,7 +468,7 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.9 }}
-                    className="font-mono text-xl text-black mb-6"
+                    className="font-mono text-xl text-black mb-8"
                   >
                     ${product.price}
                   </motion.p>
@@ -480,7 +480,7 @@ export default function Home() {
                     transition={{ delay: 1 }}
                     className="mb-8"
                   >
-                    <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-4 uppercase">
+                    <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-3 uppercase">
                       color — {product.colors[selectedColor].name.toLowerCase()}
                     </p>
                     <div className="flex gap-3">
@@ -504,12 +504,12 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.1 }}
-                    className="mb-10"
+                    className="mb-8"
                   >
-                    <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-4 uppercase">
+                    <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-3 uppercase">
                       size
                     </p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 mb-8">
                       {product.sizes.map((size) => (
                         <button
                           key={size}
@@ -761,10 +761,10 @@ export default function Home() {
               transition={{ type: 'tween', duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="fixed top-0 right-0 bottom-0 z-[301] w-full max-w-md bg-white border-l border-grey-pale flex flex-col"
             >
-              <div className="flex items-center justify-between p-6 border-b border-grey-pale">
+              <div className="flex items-center justify-between p-8 border-b border-grey-pale">
                 <div>
-                  <h2 className="font-display text-2xl">bag</h2>
-                  <p className="font-mono text-xs tracking-widest text-grey-mid mt-1">
+                  <h2 className="font-mono text-xl tracking-wide">bag</h2>
+                  <p className="font-mono text-xs tracking-widest text-grey-mid mt-2">
                     {cartCount} {cartCount === 1 ? 'item' : 'items'}
                   </p>
                 </div>
@@ -776,18 +776,18 @@ export default function Home() {
                 </button>
               </div>
 
-              <div className="flex-1 overflow-y-auto p-6">
+              <div className="flex-1 overflow-y-auto p-8">
                 {cart.length === 0 ? (
                   <div className="h-full flex flex-col items-center justify-center text-center">
-                    <div className="w-16 h-16 border border-grey-pale rounded-full flex items-center justify-center mb-6">
+                    <div className="w-16 h-16 border border-grey-pale rounded-full flex items-center justify-center mb-8">
                       <svg className="w-6 h-6 text-grey-mid" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                       </svg>
                     </div>
-                    <p className="font-mono text-sm tracking-widest text-grey-mid mb-2">
+                    <p className="font-mono text-sm tracking-widest text-grey-mid mb-4">
                       your bag is empty
                     </p>
-                    <p className="font-mono text-xs text-grey-mid mb-6">
+                    <p className="font-mono text-xs text-grey-mid mb-8">
                       add some kolor to your life
                     </p>
                     <button
@@ -862,20 +862,20 @@ export default function Home() {
               </div>
 
               {cart.length > 0 && (
-                <div className="p-6 border-t border-grey-pale">
-                  <div className="flex items-center justify-between mb-2">
+                <div className="p-8 border-t border-grey-pale">
+                  <div className="flex items-center justify-between mb-4">
                     <span className="font-mono text-sm tracking-widest text-grey-mid">
                       subtotal
                     </span>
-                    <span className="font-display text-2xl">
+                    <span className="font-mono text-xl">
                       ${cartTotal}
                     </span>
                   </div>
-                  <p className="font-mono text-xs text-grey-mid mb-6">
+                  <p className="font-mono text-xs text-grey-mid mb-8">
                     shipping calculated at checkout
                   </p>
                   
-                  <button className="w-full py-4 bg-black text-white font-mono text-sm tracking-widest hover:bg-[#6B5EA1] hover:text-white transition-colors mb-3">
+                  <button className="w-full py-4 bg-black text-white font-mono text-sm tracking-widest hover:bg-[#6B5EA1] hover:text-white transition-colors mb-4">
                     checkout
                   </button>
                   
