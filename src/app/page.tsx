@@ -237,7 +237,7 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2 }}
-                className="flex justify-center mb-8 md:mb-12"
+                className="flex justify-center mb-16 md:mb-24"
               >
                 <div className="flex flex-col items-center">
                   <motion.div
