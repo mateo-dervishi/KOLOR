@@ -192,7 +192,7 @@ export default function Home() {
               }}
             />
 
-            <div className="absolute inset-0 flex flex-col justify-between p-4 md:p-10 pb-16 md:pb-20">
+            <div className="absolute inset-0 flex flex-col justify-between p-4 md:p-10 pb-20 md:pb-28">
               <div className="flex justify-between items-start">
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -453,7 +453,7 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.7 }}
-                    className="font-mono text-xs tracking-[0.2em] text-grey-mid mb-4"
+                    className="font-mono text-xs tracking-[0.2em] text-grey-mid mb-6"
                   >
                     ss25 — full set
                   </motion.p>
@@ -463,7 +463,7 @@ export default function Home() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8 }}
-                    className="font-mono text-2xl md:text-3xl lg:text-4xl font-normal mb-4 tracking-tight"
+                    className="font-mono text-2xl md:text-3xl lg:text-4xl font-normal mb-6 tracking-tight"
                   >
                     kolor tracksuit
                   </motion.h1>
@@ -473,7 +473,7 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.9 }}
-                    className="font-mono text-lg md:text-xl text-black mb-6 md:mb-8"
+                    className="font-mono text-lg md:text-xl text-black mb-10"
                   >
                     ${product.price}
                   </motion.p>
@@ -483,9 +483,9 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1 }}
-                    className="mb-8"
+                    className="mb-10"
                   >
-                    <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-3 uppercase">
+                    <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-4 uppercase">
                       color — {product.colors[selectedColor].name.toLowerCase()}
                     </p>
                     <div className="flex gap-3">
@@ -509,12 +509,11 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.1 }}
-                    className="mb-8"
                   >
-                    <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-3 uppercase">
+                    <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-4 uppercase">
                       size
                     </p>
-                    <div className="flex flex-wrap gap-2 mb-8">
+                    <div className="flex flex-wrap gap-2">
                       {product.sizes.map((size) => (
                         <button
                           key={size}
@@ -530,6 +529,9 @@ export default function Home() {
                       ))}
                     </div>
                   </motion.div>
+                  
+                  {/* Spacer between sizes and button */}
+                  <div className="h-10" />
 
                   {/* Add to Bag Button */}
                   <motion.button
@@ -803,7 +805,7 @@ export default function Home() {
                     </button>
                   </div>
                 ) : (
-                  <div className="space-y-6">
+                  <div className="space-y-8">
                     {cart.map((item) => (
                       <motion.div
                         key={item.id}
@@ -811,7 +813,7 @@ export default function Home() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, x: -100 }}
-                        className="flex gap-4"
+                        className="flex gap-5"
                       >
                         <div className="w-24 h-28 bg-white border border-grey-pale overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
                           <img
@@ -826,15 +828,15 @@ export default function Home() {
                             <h3 className="font-mono text-sm tracking-wider text-black">
                               {item.name}
                             </h3>
-                            <p className="font-mono text-xs text-grey-mid mt-1">
+                            <p className="font-mono text-xs text-grey-mid mt-2">
                               {item.size} / {item.color}
                             </p>
-                            <p className="font-mono text-sm text-black mt-1">
+                            <p className="font-mono text-sm text-black mt-2">
                               ${item.price}
                             </p>
                           </div>
 
-                          <div className="flex items-center justify-between">
+                          <div className="flex items-center justify-between mt-3">
                             <div className="flex items-center border border-grey-pale">
                               <button
                                 onClick={() => updateQuantity(item.id, -1)}
@@ -867,8 +869,8 @@ export default function Home() {
               </div>
 
               {cart.length > 0 && (
-                <div className="p-5 md:p-8 border-t border-grey-pale">
-                  <div className="flex items-center justify-between mb-4">
+                <div className="p-6 md:p-8 border-t border-grey-pale">
+                  <div className="flex items-center justify-between mb-6">
                     <span className="font-mono text-sm tracking-widest text-grey-mid">
                       subtotal
                     </span>
@@ -876,7 +878,8 @@ export default function Home() {
                       ${cartTotal}
                     </span>
                   </div>
-                  <p className="font-mono text-xs text-grey-mid mb-8">
+                  
+                  <p className="font-mono text-xs text-grey-mid mb-6">
                     shipping calculated at checkout
                   </p>
                   
