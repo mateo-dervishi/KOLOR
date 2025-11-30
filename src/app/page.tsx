@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useUIStore } from '@/store/ui';
 
 const taglines = [
-  'i thought life was full of kolor',
+  'life is full of kolor',
   "what's life without kolor",
   'no kolor just reality',
 ];
@@ -237,7 +237,7 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2 }}
-                className="flex justify-center mb-16 md:mb-24"
+                className="flex justify-center mb-28 md:mb-36"
               >
                 <div className="flex flex-col items-center">
                   <motion.div
@@ -319,9 +319,9 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5 }}
-                className="font-serif italic text-lg text-black mt-6"
+                className="font-serif text-lg text-black mt-6"
               >
-                i thought life was full of kolor
+                life is full of kolor
               </motion.p>
             </div>
 
