@@ -165,7 +165,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden">
+    <div className="min-h-screen bg-white text-black overflow-hidden">
       
       {/* ========== PHASE 1: LANDING ========== */}
       <AnimatePresence>
@@ -174,7 +174,7 @@ export default function Home() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
             onClick={handleEnter}
-            className="fixed inset-0 z-[200] bg-black cursor-pointer"
+            className="fixed inset-0 z-[200] bg-white cursor-pointer"
             style={{ filter: 'grayscale(100%)' }}
           >
             <div className="absolute inset-0 opacity-[0.03]"
@@ -212,7 +212,7 @@ export default function Home() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.3, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                  className="font-display text-[28vw] md:text-[22vw] leading-[0.8] tracking-tight text-white"
+                  className="font-display text-[28vw] md:text-[22vw] leading-[0.8] tracking-tight text-black"
                 >
                   KOLOR
                 </motion.h1>
@@ -243,7 +243,7 @@ export default function Home() {
                   <motion.div
                     animate={{ scale: [1, 1.1, 1], opacity: [0.5, 1, 0.5] }}
                     transition={{ duration: 2, repeat: Infinity }}
-                    className="w-2 h-2 rounded-full bg-white mb-4"
+                    className="w-2 h-2 rounded-full bg-black mb-4"
                   />
                   <p className="font-mono text-[9px] tracking-[0.3em] text-grey-mid">
                     CLICK TO ADD KOLOR
@@ -262,7 +262,7 @@ export default function Home() {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, delay: 2 }}
-            className="fixed inset-0 z-[150] bg-black flex items-center justify-center"
+            className="fixed inset-0 z-[150] bg-white flex items-center justify-center"
           >
             <motion.div
               initial={{ scaleX: 0 }}
@@ -318,7 +318,7 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5 }}
-                className="font-serif italic text-lg text-white mt-6"
+                className="font-serif italic text-lg text-black mt-6"
               >
                 I thought life was full of kolor
               </motion.p>
@@ -344,11 +344,11 @@ export default function Home() {
             className="min-h-screen"
           >
             {/* Header */}
-            <header className="fixed top-0 left-0 right-0 z-50 p-6 md:p-10 flex justify-between items-center mix-blend-difference">
-              <span className="font-display text-xl text-white">KOLOR</span>
+            <header className="fixed top-0 left-0 right-0 z-50 p-6 md:p-10 flex justify-between items-center">
+              <span className="font-display text-xl text-black">KOLOR</span>
               <button 
                 onClick={() => setCartOpen(true)}
-                className="font-mono text-[10px] tracking-widest text-white hover:opacity-70 transition-opacity"
+                className="font-mono text-[10px] tracking-widest text-black hover:opacity-70 transition-opacity"
               >
                 BAG ({cartCount})
               </button>
@@ -361,7 +361,7 @@ export default function Home() {
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="relative w-full lg:w-1/2 h-[60vh] lg:h-screen bg-black flex items-center justify-center"
+                className="relative w-full lg:w-1/2 h-[60vh] lg:h-screen bg-white flex items-center justify-center"
               >
                 {/* Image Container - Centered with fixed dimensions */}
                 <div className="relative w-full h-full flex items-center justify-center px-8 lg:px-16 py-24 lg:py-32">
@@ -388,8 +388,8 @@ export default function Home() {
                       onClick={() => setCurrentImage('hoodie')}
                       className={`font-mono text-[10px] tracking-widest transition-all duration-300 pb-1 ${
                         currentImage === 'hoodie' 
-                          ? 'text-white border-b border-white' 
-                          : 'text-grey-mid hover:text-white'
+                          ? 'text-black border-b border-black' 
+                          : 'text-grey-mid hover:text-black'
                       }`}
                     >
                       HOODIE
@@ -398,8 +398,8 @@ export default function Home() {
                       onClick={() => setCurrentImage('pants')}
                       className={`font-mono text-[10px] tracking-widest transition-all duration-300 pb-1 ${
                         currentImage === 'pants' 
-                          ? 'text-white border-b border-white' 
-                          : 'text-grey-mid hover:text-white'
+                          ? 'text-black border-b border-black' 
+                          : 'text-grey-mid hover:text-black'
                       }`}
                     >
                       PANTS
@@ -411,7 +411,7 @@ export default function Home() {
                 </div>
 
                 {/* Subtle border on right */}
-                <div className="hidden lg:block absolute top-0 bottom-0 right-0 w-px bg-grey-dark" />
+                <div className="hidden lg:block absolute top-0 bottom-0 right-0 w-px bg-grey-pale" />
               </motion.div>
 
               {/* Right - Product Info */}
@@ -419,7 +419,7 @@ export default function Home() {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
-                className="w-full lg:w-1/2 flex items-center justify-center p-8 md:p-12 lg:p-16 xl:p-20 bg-black"
+                className="w-full lg:w-1/2 flex items-center justify-center p-8 md:p-12 lg:p-16 xl:p-20 bg-white"
               >
                 <div className="w-full max-w-sm">
                   <motion.p
@@ -475,15 +475,15 @@ export default function Home() {
                           onClick={() => setSelectedColor(i)}
                           className={`group relative w-12 h-12 rounded-full border-2 transition-all duration-300 ${
                             selectedColor === i 
-                              ? 'border-white scale-110' 
-                              : 'border-grey-dark hover:border-grey-mid'
+                              ? 'border-black scale-110' 
+                              : 'border-grey-pale hover:border-grey-mid'
                           }`}
                           style={{ backgroundColor: color.hex }}
                         >
                           {selectedColor === i && (
                             <motion.div
                               layoutId="color-ring"
-                              className="absolute inset-[-4px] rounded-full border border-white"
+                              className="absolute inset-[-4px] rounded-full border border-black"
                             />
                           )}
                         </button>
@@ -508,8 +508,8 @@ export default function Home() {
                           onClick={() => setSelectedSize(size)}
                           className={`w-14 h-14 font-mono text-[12px] border transition-all duration-300 ${
                             selectedSize === size
-                              ? 'border-white bg-white text-black'
-                              : 'border-grey-dark text-white hover:border-grey-mid'
+                              ? 'border-black bg-black text-white'
+                              : 'border-grey-pale text-black hover:border-grey-mid'
                           }`}
                         >
                           {size}
@@ -527,8 +527,8 @@ export default function Home() {
                     disabled={!selectedSize || isAdding}
                     className={`relative w-full py-5 font-mono text-[11px] tracking-widest transition-all duration-300 overflow-hidden ${
                       selectedSize
-                        ? 'bg-white text-black hover:bg-[#722F37] hover:text-white'
-                        : 'bg-grey-dark text-grey-mid cursor-not-allowed'
+                        ? 'bg-black text-white hover:bg-[#722F37] hover:text-white'
+                        : 'bg-grey-pale text-grey-mid cursor-not-allowed'
                     }`}
                   >
                     <AnimatePresence mode="wait">
@@ -543,7 +543,7 @@ export default function Home() {
                           <motion.span
                             animate={{ rotate: 360 }}
                             transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                            className="w-4 h-4 border-2 border-black border-t-transparent rounded-full"
+                            className="w-4 h-4 border-2 border-white border-t-transparent rounded-full"
                           />
                           ADDING...
                         </motion.span>
@@ -587,7 +587,7 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.5 }}
-                    className="mt-8 pt-6 border-t border-grey-dark"
+                    className="mt-8 pt-6 border-t border-grey-pale"
                   >
                     <p className="font-mono text-[10px] tracking-widest text-grey-mid mb-3">
                       INCLUDES
@@ -614,7 +614,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setCartOpen(false)}
-              className="fixed inset-0 z-[300] bg-black/80 backdrop-blur-sm"
+              className="fixed inset-0 z-[300] bg-white/80 backdrop-blur-sm"
             />
 
             <motion.div
@@ -622,9 +622,9 @@ export default function Home() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'tween', duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed top-0 right-0 bottom-0 z-[301] w-full max-w-md bg-black border-l border-grey-dark flex flex-col"
+              className="fixed top-0 right-0 bottom-0 z-[301] w-full max-w-md bg-white border-l border-grey-pale flex flex-col"
             >
-              <div className="flex items-center justify-between p-6 border-b border-grey-dark">
+              <div className="flex items-center justify-between p-6 border-b border-grey-pale">
                 <div>
                   <h2 className="font-display text-2xl">BAG</h2>
                   <p className="font-mono text-[10px] tracking-widest text-grey-mid mt-1">
@@ -633,7 +633,7 @@ export default function Home() {
                 </div>
                 <button
                   onClick={() => setCartOpen(false)}
-                  className="font-mono text-[10px] tracking-widest text-grey-light hover:text-white transition-colors"
+                  className="font-mono text-[10px] tracking-widest text-grey-mid hover:text-black transition-colors"
                 >
                   CLOSE
                 </button>
@@ -642,7 +642,7 @@ export default function Home() {
               <div className="flex-1 overflow-y-auto p-6">
                 {cart.length === 0 ? (
                   <div className="h-full flex flex-col items-center justify-center text-center">
-                    <div className="w-16 h-16 border border-grey-dark rounded-full flex items-center justify-center mb-6">
+                    <div className="w-16 h-16 border border-grey-pale rounded-full flex items-center justify-center mb-6">
                       <svg className="w-6 h-6 text-grey-mid" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                       </svg>
@@ -655,7 +655,7 @@ export default function Home() {
                     </p>
                     <button
                       onClick={() => setCartOpen(false)}
-                      className="font-mono text-[10px] tracking-widest text-white underline hover:text-[#722F37] transition-colors"
+                      className="font-mono text-[10px] tracking-widest text-black underline hover:text-[#722F37] transition-colors"
                     >
                       CONTINUE SHOPPING
                     </button>
@@ -671,7 +671,7 @@ export default function Home() {
                         exit={{ opacity: 0, x: -100 }}
                         className="flex gap-4"
                       >
-                        <div className="w-24 h-28 bg-black border border-grey-dark overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
+                        <div className="w-24 h-28 bg-grey-pale border border-grey-pale overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
                           <img
                             src={item.image}
                             alt={item.name}
@@ -681,22 +681,22 @@ export default function Home() {
 
                         <div className="flex-1 flex flex-col justify-between py-1">
                           <div>
-                            <h3 className="font-mono text-[11px] tracking-wider text-white">
+                            <h3 className="font-mono text-[11px] tracking-wider text-black">
                               {item.name}
                             </h3>
                             <p className="font-mono text-[10px] text-grey-mid mt-1">
                               {item.size} / {item.color}
                             </p>
-                            <p className="font-mono text-[11px] text-white mt-1">
+                            <p className="font-mono text-[11px] text-black mt-1">
                               ${item.price}
                             </p>
                           </div>
 
                           <div className="flex items-center justify-between">
-                            <div className="flex items-center border border-grey-dark">
+                            <div className="flex items-center border border-grey-pale">
                               <button
                                 onClick={() => updateQuantity(item.id, -1)}
-                                className="w-8 h-8 flex items-center justify-center text-grey-light hover:text-white transition-colors"
+                                className="w-8 h-8 flex items-center justify-center text-grey-mid hover:text-black transition-colors"
                               >
                                 −
                               </button>
@@ -705,7 +705,7 @@ export default function Home() {
                               </span>
                               <button
                                 onClick={() => updateQuantity(item.id, 1)}
-                                className="w-8 h-8 flex items-center justify-center text-grey-light hover:text-white transition-colors"
+                                className="w-8 h-8 flex items-center justify-center text-grey-mid hover:text-black transition-colors"
                               >
                                 +
                               </button>
@@ -725,7 +725,7 @@ export default function Home() {
               </div>
 
               {cart.length > 0 && (
-                <div className="p-6 border-t border-grey-dark">
+                <div className="p-6 border-t border-grey-pale">
                   <div className="flex items-center justify-between mb-2">
                     <span className="font-mono text-[10px] tracking-widest text-grey-mid">
                       SUBTOTAL
@@ -738,13 +738,13 @@ export default function Home() {
                     SHIPPING CALCULATED AT CHECKOUT
                   </p>
                   
-                  <button className="w-full py-4 bg-white text-black font-mono text-[11px] tracking-widest hover:bg-[#722F37] hover:text-white transition-colors mb-3">
+                  <button className="w-full py-4 bg-black text-white font-mono text-[11px] tracking-widest hover:bg-[#722F37] hover:text-white transition-colors mb-3">
                     CHECKOUT
                   </button>
                   
                   <button
                     onClick={() => setCartOpen(false)}
-                    className="w-full py-4 border border-grey-dark text-white font-mono text-[10px] tracking-widest hover:border-white transition-colors"
+                    className="w-full py-4 border border-grey-pale text-black font-mono text-[10px] tracking-widest hover:border-black transition-colors"
                   >
                     CONTINUE SHOPPING
                   </button>

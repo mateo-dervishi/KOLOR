@@ -41,10 +41,10 @@
   --foreground: var(--black);
 }
 
-/* Dark mode by default for KOLOR */
+/* Light mode by default for KOLOR */
 :root {
-  --background: var(--black);
-  --foreground: var(--white);
+  --background: var(--white);
+  --foreground: var(--black);
 }
 
 @theme inline {

@@ -126,7 +126,7 @@ export function CustomCursor() {
           transition={{ duration: 0.2 }}
           className="relative -translate-x-1/2 -translate-y-1/2"
         >
-          <div className="w-3 h-3 rounded-full bg-kolor-orange transition-colors duration-300" />
+          <div className="w-3 h-3 rounded-full bg-black transition-colors duration-300" />
         </motion.div>
       </motion.div>
 
