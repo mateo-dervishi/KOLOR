@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useUIStore } from '@/store/ui';
 
 const taglines = [
-  'life is full of kolor',
   "what's life without kolor",
   'no kolor just reality',
+  'life is full of kolor',
 ];
 
 // The tracksuit product
