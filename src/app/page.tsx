@@ -388,7 +388,7 @@ export default function Home() {
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="relative w-full lg:w-1/2 h-[60vh] lg:h-screen bg-white flex items-center justify-center"
+                className="relative w-full lg:w-1/2 h-[60vh] lg:h-screen bg-[#f5f5f5] flex items-center justify-center"
               >
                 {/* Image Container - Centered with fixed dimensions */}
                 <div className="relative w-full h-full flex items-center justify-center px-8 lg:px-16 py-24 lg:py-32">
