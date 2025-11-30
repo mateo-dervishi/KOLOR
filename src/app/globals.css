@@ -1,26 +1,400 @@
+/* Custom Font Imports - must come before other rules */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
 @import "tailwindcss";
 
+/* ========================================
+   KOLOR Design System - Brutalist Edition
+   "I thought life was full of kolor"
+   ======================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Base Colors - The "Reality" */
+  --black: #000000;
+  --white: #FFFFFF;
+  --off-white: #F5F5F5;
+  --charcoal: #0A0A0A;
+  --grey-dark: #1A1A1A;
+  --grey-mid: #666666;
+  --grey-light: #999999;
+  --grey-pale: #E5E5E5;
+  
+  /* Accent Colors - The "Kolor" */
+  --kolor-orange: #FF4D00;
+  --kolor-red: #E63946;
+  --kolor-blue: #0066FF;
+  --kolor-green: #00FF66;
+  --kolor-purple: #8B5CF6;
+  --kolor-yellow: #FFE600;
+  
+  /* Typography */
+  --font-display: 'Libre Baskerville', serif;
+  --font-body: 'Libre Baskerville', serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-serif: 'Cormorant Garamond', serif;
+  
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
+  
+  /* Background & Foreground */
+  --background: var(--white);
+  --foreground: var(--black);
+}
+
+/* Dark mode by default for KOLOR */
+:root {
+  --background: var(--black);
+  --foreground: var(--white);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-black: var(--black);
+  --color-white: var(--white);
+  --color-off-white: var(--off-white);
+  --color-charcoal: var(--charcoal);
+  --color-grey-dark: var(--grey-dark);
+  --color-grey-mid: var(--grey-mid);
+  --color-grey-light: var(--grey-light);
+  --color-grey-pale: var(--grey-pale);
+  --color-kolor-orange: var(--kolor-orange);
+  --color-kolor-red: var(--kolor-red);
+  --color-kolor-blue: var(--kolor-blue);
+  --color-kolor-green: var(--kolor-green);
+  --color-kolor-purple: var(--kolor-purple);
+  --color-kolor-yellow: var(--kolor-yellow);
+  
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ========================================
+   Base Styles - Brutalist
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ========================================
+   Typography - Bold & Minimal
+   ======================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+  font-weight: 400;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Massive display text */
+.text-massive {
+  font-size: clamp(4rem, 20vw, 20rem);
+  line-height: 0.85;
+}
+
+.text-huge {
+  font-size: clamp(3rem, 12vw, 12rem);
+  line-height: 0.85;
+}
+
+.text-large {
+  font-size: clamp(2rem, 8vw, 8rem);
+  line-height: 0.9;
+}
+
+/* ========================================
+   Selection
+   ======================================== */
+
+::selection {
+  background: var(--kolor-orange);
+  color: var(--black);
+}
+
+/* ========================================
+   Links - Minimal
+   ======================================== */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s var(--ease-out-expo);
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ========================================
+   Custom Animations
+   ======================================== */
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes glitch-1 {
+  0%, 100% { clip-path: inset(40% 0 61% 0); }
+  20% { clip-path: inset(92% 0 1% 0); }
+  40% { clip-path: inset(43% 0 1% 0); }
+  60% { clip-path: inset(25% 0 58% 0); }
+  80% { clip-path: inset(54% 0 7% 0); }
+}
+
+@keyframes glitch-2 {
+  0%, 100% { clip-path: inset(50% 0 30% 0); }
+  20% { clip-path: inset(1% 0 92% 0); }
+  40% { clip-path: inset(1% 0 43% 0); }
+  60% { clip-path: inset(58% 0 25% 0); }
+  80% { clip-path: inset(7% 0 54% 0); }
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+/* Grayscale to Color */
+.greyscale-hover {
+  filter: grayscale(100%);
+  transition: filter 0.8s var(--ease-out-expo);
+}
+
+.greyscale-hover:hover {
+  filter: grayscale(0%);
+}
+
+/* Border utilities */
+.border-t-thin {
+  border-top: 1px solid var(--grey-dark);
+}
+
+.border-b-thin {
+  border-bottom: 1px solid var(--grey-dark);
+}
+
+/* Hide cursor when custom cursor is active */
+.custom-cursor-active {
+  cursor: none !important;
+}
+
+.custom-cursor-active * {
+  cursor: none !important;
+}
+
+/* Noise overlay - subtle grain */
+.noise-overlay::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* Glitch text effect */
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  color: var(--kolor-red);
+  animation: glitch-1 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  color: var(--kolor-blue);
+  animation: glitch-2 3s infinite linear alternate-reverse;
+}
+
+/* Blend modes */
+.mix-blend-difference {
+  mix-blend-mode: difference;
+}
+
+.mix-blend-exclusion {
+  mix-blend-mode: exclusion;
+}
+
+/* ========================================
+   Button Styles
+   ======================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.btn:hover {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.btn-filled {
+  background: var(--foreground);
+  color: var(--background);
+  border: none;
+}
+
+.btn-filled:hover {
+  background: var(--kolor-orange);
+  color: var(--black);
+}
+
+/* ========================================
+   Mobile Responsive
+   ======================================== */
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+/* ========================================
+   Scrolling Text/Marquee
+   ======================================== */
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-flex;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
 }
