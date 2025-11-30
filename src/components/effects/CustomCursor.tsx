@@ -28,16 +28,10 @@ export function CustomCursor() {
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
   
-  // Vibrant color palette - always colorful
+  // Clothing colors - sage green and purple
   const colors = [
-    '#FF4D00', // Orange
-    '#E63946', // Red
-    '#8B5CF6', // Purple
-    '#0066FF', // Blue
-    '#00FF66', // Green
-    '#FFE600', // Yellow
-    '#FF6B35', // Light orange
-    '#722F37', // Burgundy
+    '#90B77D', // Sage green (Pantone 13-1530)
+    '#6B5EA1', // Purple (Pantone 18-3946)
   ];
 
   useEffect(() => {
@@ -110,7 +104,7 @@ export function CustomCursor() {
 
   return (
     <>
-      {/* Main cursor */}
+      {/* Main cursor - Arrow */}
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-[9999]"
         style={{
@@ -120,13 +114,22 @@ export function CustomCursor() {
       >
         <motion.div
           animate={{
-            scale: isPointer ? 2 : 1,
-            opacity: isPointer ? 0.6 : 1,
+            scale: isPointer ? 1.2 : 1,
+            opacity: isPointer ? 0.7 : 1,
           }}
           transition={{ duration: 0.2 }}
-          className="relative -translate-x-1/2 -translate-y-1/2"
+          className="relative"
+          style={{ marginLeft: '-2px', marginTop: '-2px' }}
         >
-          <div className="w-3 h-3 rounded-full bg-black transition-colors duration-300" />
+          <svg 
+            width="20" 
+            height="20" 
+            viewBox="0 0 24 24" 
+            fill="black"
+            className="drop-shadow-sm"
+          >
+            <path d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.86a.5.5 0 0 0-.85.35z" />
+          </svg>
         </motion.div>
       </motion.div>
 

@@ -262,31 +262,32 @@ export default function Home() {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, delay: 2 }}
-            className="fixed inset-0 z-[150] bg-white flex items-center justify-center"
+            className="fixed inset-0 z-[150] flex items-center justify-center"
+            style={{ background: 'linear-gradient(135deg, #e8f0e3 0%, #e5e0f0 100%)' }}
           >
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute top-0 left-0 right-0 h-1 bg-[#90B77D] origin-left"
+              className="absolute top-0 left-0 right-0 h-2 bg-[#90B77D] origin-left"
             />
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-              className="absolute bottom-0 left-0 right-0 h-1 bg-[#6B5EA1] origin-right"
+              className="absolute bottom-0 left-0 right-0 h-2 bg-[#6B5EA1] origin-right"
             />
             <motion.div
               initial={{ scaleY: 0 }}
               animate={{ scaleY: 1 }}
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-              className="absolute top-0 bottom-0 left-0 w-1 bg-[#90B77D] origin-top"
+              className="absolute top-0 bottom-0 left-0 w-2 bg-[#90B77D] origin-top"
             />
             <motion.div
               initial={{ scaleY: 0 }}
               animate={{ scaleY: 1 }}
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-              className="absolute top-0 bottom-0 right-0 w-1 bg-[#6B5EA1] origin-bottom"
+              className="absolute top-0 bottom-0 right-0 w-2 bg-[#6B5EA1] origin-bottom"
             />
 
             <div className="text-center">
@@ -326,8 +327,8 @@ export default function Home() {
 
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: [0, 0.15, 0] }}
-              transition={{ delay: 1, duration: 1.5 }}
+              animate={{ opacity: [0, 0.4, 0.3] }}
+              transition={{ delay: 0.8, duration: 1.8 }}
               className="absolute inset-0 pointer-events-none"
               style={{ background: 'linear-gradient(135deg, #90B77D 0%, #6B5EA1 100%)' }}
             />
