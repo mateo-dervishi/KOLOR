@@ -509,7 +509,7 @@ export default function Home() {
                     <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-4 uppercase">
                       size
                     </p>
-                    <div className="flex flex-wrap gap-2 mb-6">
+                    <div className="flex flex-wrap gap-2">
                       {product.sizes.map((size) => (
                         <button
                           key={size}
@@ -525,6 +525,9 @@ export default function Home() {
                       ))}
                     </div>
                   </motion.div>
+                  
+                  {/* Spacer */}
+                  <div className="h-4" />
 
                   {/* Add to Bag Button */}
                   <motion.button
