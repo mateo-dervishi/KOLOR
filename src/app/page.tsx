@@ -56,8 +56,13 @@ export default function Home() {
   const [cartOpen, setCartOpen] = useState(false);
   const [cart, setCart] = useState<CartItem[]>([]);
   const [addedFeedback, setAddedFeedback] = useState(false);
+  const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   
   const { hasEntered, setHasEntered } = useUIStore();
+  
+  const toggleAccordion = (id: string) => {
+    setOpenAccordion(openAccordion === id ? null : id);
+  };
 
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
   const cartTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -446,74 +451,61 @@ export default function Home() {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
-                className="w-full lg:w-1/2 flex items-center justify-center p-8 md:p-12 lg:p-16 xl:p-20 bg-white"
+                className="w-full lg:w-1/2 flex items-start justify-center p-8 md:p-12 lg:p-16 xl:p-20 bg-white overflow-y-auto"
               >
-                <div className="w-full max-w-sm">
+                <div className="w-full max-w-md pt-16 lg:pt-8">
+                  {/* Collection Tag */}
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.7 }}
-                    className="font-mono text-xs tracking-widest text-grey-mid mb-4"
+                    className="font-mono text-xs tracking-[0.2em] text-grey-mid mb-6"
                   >
                     ss25 — full set
                   </motion.p>
                   
+                  {/* Product Title */}
                   <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8 }}
-                    className="font-display text-4xl md:text-5xl lg:text-5xl mb-4"
+                    className="font-mono text-3xl md:text-4xl font-normal mb-3 tracking-tight"
                   >
                     kolor tracksuit
                   </motion.h1>
 
+                  {/* Price */}
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.9 }}
-                    className="font-mono text-2xl mb-8"
+                    className="font-mono text-xl text-black mb-10"
                   >
                     ${product.price}
-                  </motion.p>
-
-                  <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1 }}
-                    className="font-mono text-sm text-grey-light leading-relaxed mb-12"
-                  >
-                    {product.description}
                   </motion.p>
 
                   {/* Color Selection */}
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 1.1 }}
+                    transition={{ delay: 1 }}
                     className="mb-8"
                   >
-                    <p className="font-mono text-[10px] tracking-widest text-grey-mid mb-4">
-                      color
+                    <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-4 uppercase">
+                      color — {product.colors[selectedColor].name.toLowerCase()}
                     </p>
-                    <div className="flex gap-3">
+                    <div className="flex gap-4">
                       {product.colors.map((color, i) => (
                         <button
                           key={color.name}
                           onClick={() => setSelectedColor(i)}
-                          className={`group relative w-12 h-12 rounded-full border-2 transition-all duration-300 ${
+                          className={`group relative w-10 h-10 rounded-full border-2 transition-all duration-300 ${
                             selectedColor === i 
-                              ? 'border-black scale-110' 
+                              ? 'border-black' 
                               : 'border-grey-pale hover:border-grey-mid'
                           }`}
                           style={{ backgroundColor: color.hex }}
-                        >
-                          {selectedColor === i && (
-                            <motion.div
-                              layoutId="color-ring"
-                              className="absolute inset-[-4px] rounded-full border border-black"
-                            />
-                          )}
-                        </button>
+                        />
                       ))}
                     </div>
                   </motion.div>
@@ -522,21 +514,21 @@ export default function Home() {
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 1.2 }}
-                    className="mb-12"
+                    transition={{ delay: 1.1 }}
+                    className="mb-10"
                   >
-                    <p className="font-mono text-[10px] tracking-widest text-grey-mid mb-4">
+                    <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-4 uppercase">
                       size
                     </p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-3">
                       {product.sizes.map((size) => (
                         <button
                           key={size}
                           onClick={() => setSelectedSize(size)}
-                          className={`w-14 h-14 font-mono text-sm border transition-all duration-300 ${
+                          className={`w-12 h-12 font-mono text-sm border transition-all duration-300 ${
                             selectedSize === size
                               ? 'border-black bg-black text-white'
-                              : 'border-grey-pale text-black hover:border-grey-mid'
+                              : 'border-grey-pale text-black hover:border-black'
                           }`}
                         >
                           {size}
@@ -549,12 +541,12 @@ export default function Home() {
                   <motion.button
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.3 }}
+                    transition={{ delay: 1.2 }}
                     onClick={handleAddToBag}
                     disabled={!selectedSize || isAdding}
-                    className={`relative w-full py-5 font-mono text-sm tracking-widest transition-all duration-300 overflow-hidden ${
+                    className={`relative w-full py-4 font-mono text-sm tracking-[0.1em] transition-all duration-300 overflow-hidden ${
                       selectedSize
-                        ? 'bg-black text-white hover:bg-[#6B5EA1] hover:text-white'
+                        ? 'bg-black text-white hover:bg-[#6B5EA1]'
                         : 'bg-grey-pale text-grey-mid cursor-not-allowed'
                     }`}
                   >
@@ -600,30 +592,159 @@ export default function Home() {
                     </AnimatePresence>
                   </motion.button>
 
+                  {/* Shipping Info */}
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 1.4 }}
-                    className="font-mono text-xs text-grey-mid text-center mt-6"
+                    transition={{ delay: 1.3 }}
+                    className="font-mono text-xs text-grey-mid text-center mt-4 mb-10"
                   >
                     free worldwide shipping • 30 day returns
                   </motion.p>
 
-                  {/* What's Included */}
+                  {/* Accordion Sections */}
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 1.5 }}
-                    className="mt-8 pt-6 border-t border-grey-pale"
+                    transition={{ delay: 1.4 }}
+                    className="border-t border-grey-pale"
                   >
-                    <p className="font-mono text-sm tracking-widest text-grey-mid mb-3">
-                      includes
-                    </p>
-                    <ul className="font-mono text-sm text-grey-light space-y-1">
-                      <li>• zip-up hoodie with kc monogram</li>
-                      <li>• matching sweatpants</li>
-                      <li>• dust bag</li>
-                    </ul>
+                    {/* Description Accordion */}
+                    <div className="border-b border-grey-pale">
+                      <button
+                        onClick={() => toggleAccordion('description')}
+                        className="w-full py-5 flex items-center justify-between font-mono text-sm tracking-[0.1em] text-black hover:text-grey-mid transition-colors"
+                      >
+                        <span>description</span>
+                        <motion.span
+                          animate={{ rotate: openAccordion === 'description' ? 45 : 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="text-lg"
+                        >
+                          +
+                        </motion.span>
+                      </button>
+                      <AnimatePresence>
+                        {openAccordion === 'description' && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-hidden"
+                          >
+                            <p className="font-mono text-sm text-grey-mid leading-relaxed pb-5">
+                              {product.description}
+                            </p>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+
+                    {/* What's Included Accordion */}
+                    <div className="border-b border-grey-pale">
+                      <button
+                        onClick={() => toggleAccordion('includes')}
+                        className="w-full py-5 flex items-center justify-between font-mono text-sm tracking-[0.1em] text-black hover:text-grey-mid transition-colors"
+                      >
+                        <span>what's included</span>
+                        <motion.span
+                          animate={{ rotate: openAccordion === 'includes' ? 45 : 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="text-lg"
+                        >
+                          +
+                        </motion.span>
+                      </button>
+                      <AnimatePresence>
+                        {openAccordion === 'includes' && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-hidden"
+                          >
+                            <ul className="font-mono text-sm text-grey-mid space-y-2 pb-5">
+                              <li>— zip-up hoodie with kc monogram</li>
+                              <li>— matching sweatpants</li>
+                              <li>— branded dust bag</li>
+                            </ul>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+
+                    {/* Specifications Accordion */}
+                    <div className="border-b border-grey-pale">
+                      <button
+                        onClick={() => toggleAccordion('specs')}
+                        className="w-full py-5 flex items-center justify-between font-mono text-sm tracking-[0.1em] text-black hover:text-grey-mid transition-colors"
+                      >
+                        <span>specifications</span>
+                        <motion.span
+                          animate={{ rotate: openAccordion === 'specs' ? 45 : 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="text-lg"
+                        >
+                          +
+                        </motion.span>
+                      </button>
+                      <AnimatePresence>
+                        {openAccordion === 'specs' && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-hidden"
+                          >
+                            <ul className="font-mono text-sm text-grey-mid space-y-2 pb-5">
+                              <li>— 100% premium heavyweight cotton</li>
+                              <li>— 400gsm french terry</li>
+                              <li>— oversized fit</li>
+                              <li>— ribbed cuffs and hem</li>
+                              <li>— embroidered kc monogram</li>
+                            </ul>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+
+                    {/* Shipping Accordion */}
+                    <div className="border-b border-grey-pale">
+                      <button
+                        onClick={() => toggleAccordion('shipping')}
+                        className="w-full py-5 flex items-center justify-between font-mono text-sm tracking-[0.1em] text-black hover:text-grey-mid transition-colors"
+                      >
+                        <span>shipping & returns</span>
+                        <motion.span
+                          animate={{ rotate: openAccordion === 'shipping' ? 45 : 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="text-lg"
+                        >
+                          +
+                        </motion.span>
+                      </button>
+                      <AnimatePresence>
+                        {openAccordion === 'shipping' && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-hidden"
+                          >
+                            <ul className="font-mono text-sm text-grey-mid space-y-2 pb-5">
+                              <li>— free worldwide shipping</li>
+                              <li>— 5-7 business days delivery</li>
+                              <li>— 30 day return policy</li>
+                              <li>— full refund on unworn items</li>
+                            </ul>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
                   </motion.div>
                 </div>
               </motion.div>
@@ -698,7 +819,7 @@ export default function Home() {
                         exit={{ opacity: 0, x: -100 }}
                         className="flex gap-4"
                       >
-                        <div className="w-24 h-28 bg-grey-pale border border-grey-pale overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
+                        <div className="w-24 h-28 bg-white border border-grey-pale overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
                           <img
                             src={item.image}
                             alt={item.name}
