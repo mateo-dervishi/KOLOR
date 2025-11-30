@@ -348,18 +348,18 @@ export default function Home() {
                 <img 
                   src="/logo.png" 
                   alt="KOLOR" 
-                  className="h-12 md:h-16 w-auto mb-2"
+                  className="h-12 md:h-16 w-auto mb-3"
                 />
-                <nav className="flex justify-center gap-6 md:gap-10">
+                <nav className="flex justify-center gap-8 md:gap-12">
                   <a 
                     href="#about" 
-                    className="font-mono text-[11px] tracking-[0.2em] text-black hover:opacity-60 transition-opacity"
+                    className="font-mono text-[15px] tracking-[0.2em] text-black hover:opacity-60 transition-opacity"
                   >
                     about
                   </a>
                   <a 
                     href="#contact" 
-                    className="font-mono text-[11px] tracking-[0.2em] text-black hover:opacity-60 transition-opacity"
+                    className="font-mono text-[15px] tracking-[0.2em] text-black hover:opacity-60 transition-opacity"
                   >
                     contact
                   </a>
@@ -370,7 +370,7 @@ export default function Home() {
               <div className="absolute right-8 md:right-16 top-6 md:top-8">
                 <button 
                   onClick={() => setCartOpen(true)}
-                  className="font-mono text-[11px] tracking-[0.2em] text-black hover:opacity-60 transition-opacity"
+                  className="font-mono text-[15px] tracking-[0.2em] text-black hover:opacity-60 transition-opacity"
                 >
                   bag{cartCount > 0 && ` (${cartCount})`}
                 </button>
@@ -384,7 +384,7 @@ export default function Home() {
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="relative w-full lg:w-1/2 h-[60vh] lg:h-screen bg-[#f0f0f0] flex items-center justify-center"
+                className="relative w-full lg:w-1/2 h-[60vh] lg:h-screen bg-white flex items-center justify-center"
               >
                 {/* Image Container - Centered with fixed dimensions */}
                 <div className="relative w-full h-full flex items-center justify-center px-8 lg:px-16 py-24 lg:py-32">
@@ -448,7 +448,7 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.7 }}
-                    className="font-mono text-xs tracking-[0.2em] text-grey-mid mb-6"
+                    className="font-mono text-xs tracking-[0.2em] text-grey-mid mb-3"
                   >
                     ss25 — full set
                   </motion.p>
@@ -458,7 +458,7 @@ export default function Home() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8 }}
-                    className="font-mono text-3xl md:text-4xl font-normal mb-3 tracking-tight"
+                    className="font-mono text-3xl md:text-4xl font-normal mb-2 tracking-tight"
                   >
                     kolor tracksuit
                   </motion.h1>
@@ -468,7 +468,7 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.9 }}
-                    className="font-mono text-xl text-black mb-10"
+                    className="font-mono text-xl text-black mb-6"
                   >
                     ${product.price}
                   </motion.p>
@@ -478,17 +478,17 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1 }}
-                    className="mb-8"
+                    className="mb-5"
                   >
-                    <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-4 uppercase">
+                    <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-3 uppercase">
                       color — {product.colors[selectedColor].name.toLowerCase()}
                     </p>
-                    <div className="flex gap-4">
+                    <div className="flex gap-3">
                       {product.colors.map((color, i) => (
                         <button
                           key={color.name}
                           onClick={() => setSelectedColor(i)}
-                          className={`group relative w-10 h-10 rounded-full border-2 transition-all duration-300 ${
+                          className={`group relative w-9 h-9 rounded-full border-2 transition-all duration-300 ${
                             selectedColor === i 
                               ? 'border-black' 
                               : 'border-grey-pale hover:border-grey-mid'
@@ -504,17 +504,17 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.1 }}
-                    className="mb-10"
+                    className="mb-5"
                   >
-                    <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-4 uppercase">
+                    <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-3 uppercase">
                       size
                     </p>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap gap-2">
                       {product.sizes.map((size) => (
                         <button
                           key={size}
                           onClick={() => setSelectedSize(size)}
-                          className={`w-12 h-12 font-mono text-sm border transition-all duration-300 ${
+                          className={`w-11 h-11 font-mono text-sm border transition-all duration-300 ${
                             selectedSize === size
                               ? 'border-black bg-black text-white'
                               : 'border-grey-pale text-black hover:border-black'
@@ -586,7 +586,7 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.3 }}
-                    className="font-mono text-xs text-grey-mid text-center mt-4 mb-10"
+                    className="font-mono text-xs text-grey-mid text-center mt-3 mb-6"
                   >
                     free worldwide shipping • 30 day returns
                   </motion.p>
