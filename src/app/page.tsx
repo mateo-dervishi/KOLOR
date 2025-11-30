@@ -268,25 +268,25 @@ export default function Home() {
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute top-0 left-0 right-0 h-1 bg-[#722F37] origin-left"
+              className="absolute top-0 left-0 right-0 h-1 bg-[#00FF66] origin-left"
             />
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-              className="absolute bottom-0 left-0 right-0 h-1 bg-[#722F37] origin-right"
+              className="absolute bottom-0 left-0 right-0 h-1 bg-[#0066FF] origin-right"
             />
             <motion.div
               initial={{ scaleY: 0 }}
               animate={{ scaleY: 1 }}
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-              className="absolute top-0 bottom-0 left-0 w-1 bg-[#722F37] origin-top"
+              className="absolute top-0 bottom-0 left-0 w-1 bg-[#00FF66] origin-top"
             />
             <motion.div
               initial={{ scaleY: 0 }}
               animate={{ scaleY: 1 }}
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-              className="absolute top-0 bottom-0 right-0 w-1 bg-[#722F37] origin-bottom"
+              className="absolute top-0 bottom-0 right-0 w-1 bg-[#0066FF] origin-bottom"
             />
 
             <div className="text-center">
@@ -307,7 +307,7 @@ export default function Home() {
               >
                 <motion.span
                   initial={{ color: '#666666' }}
-                  animate={{ color: '#722F37' }}
+                  animate={{ color: '#0066FF' }}
                   transition={{ delay: 1.2, duration: 0.8 }}
                 >
                   kolor
@@ -326,9 +326,10 @@ export default function Home() {
 
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: [0, 0.2, 0] }}
+              animate={{ opacity: [0, 0.15, 0] }}
               transition={{ delay: 1, duration: 1.5 }}
-              className="absolute inset-0 bg-[#722F37] pointer-events-none"
+              className="absolute inset-0 pointer-events-none"
+              style={{ background: 'linear-gradient(135deg, #00FF66 0%, #0066FF 100%)' }}
             />
           </motion.div>
         )}
@@ -344,14 +345,41 @@ export default function Home() {
             className="min-h-screen"
           >
             {/* Header */}
-            <header className="fixed top-0 left-0 right-0 z-50 p-6 md:p-10 flex justify-between items-center">
-              <span className="font-display text-xl text-black">kolor</span>
-              <button 
-                onClick={() => setCartOpen(true)}
-                className="font-mono text-[10px] tracking-widest text-black hover:opacity-70 transition-opacity"
-              >
-                bag ({cartCount})
-              </button>
+            <header className="fixed top-0 left-0 right-0 z-50 px-6 md:px-10 py-4 md:py-6 flex justify-between items-center">
+              {/* Logo - Left */}
+              <div className="flex-1">
+                <img 
+                  src="/logo.png" 
+                  alt="KOLOR" 
+                  className="h-8 md:h-10 w-auto"
+                />
+              </div>
+              
+              {/* Nav Links - Center */}
+              <nav className="flex-1 flex justify-center gap-8 md:gap-12">
+                <a 
+                  href="#about" 
+                  className="font-mono text-sm tracking-widest text-black hover:opacity-70 transition-opacity"
+                >
+                  about
+                </a>
+                <a 
+                  href="#contact" 
+                  className="font-mono text-sm tracking-widest text-black hover:opacity-70 transition-opacity"
+                >
+                  contact
+                </a>
+              </nav>
+              
+              {/* Bag - Right */}
+              <div className="flex-1 flex justify-end">
+                <button 
+                  onClick={() => setCartOpen(true)}
+                  className="font-mono text-sm tracking-widest text-black hover:opacity-70 transition-opacity"
+                >
+                  bag ({cartCount})
+                </button>
+              </div>
             </header>
 
             {/* Main Product Layout */}
@@ -527,7 +555,7 @@ export default function Home() {
                     disabled={!selectedSize || isAdding}
                     className={`relative w-full py-5 font-mono text-[11px] tracking-widest transition-all duration-300 overflow-hidden ${
                       selectedSize
-                        ? 'bg-black text-white hover:bg-[#722F37] hover:text-white'
+                        ? 'bg-black text-white hover:bg-[#0066FF] hover:text-white'
                         : 'bg-grey-pale text-grey-mid cursor-not-allowed'
                     }`}
                   >
@@ -655,7 +683,7 @@ export default function Home() {
                     </p>
                     <button
                       onClick={() => setCartOpen(false)}
-                      className="font-mono text-[10px] tracking-widest text-black underline hover:text-[#722F37] transition-colors"
+                      className="font-mono text-[10px] tracking-widest text-black underline hover:text-[#0066FF] transition-colors"
                     >
                       continue shopping
                     </button>
@@ -712,7 +740,7 @@ export default function Home() {
                             </div>
                             <button
                               onClick={() => removeItem(item.id)}
-                              className="font-mono text-[9px] tracking-widest text-grey-mid hover:text-[#722F37] transition-colors"
+                              className="font-mono text-[9px] tracking-widest text-grey-mid hover:text-[#0066FF] transition-colors"
                             >
                               remove
                             </button>
@@ -738,7 +766,7 @@ export default function Home() {
                     shipping calculated at checkout
                   </p>
                   
-                  <button className="w-full py-4 bg-black text-white font-mono text-[11px] tracking-widest hover:bg-[#722F37] hover:text-white transition-colors mb-3">
+                  <button className="w-full py-4 bg-black text-white font-mono text-[11px] tracking-widest hover:bg-[#0066FF] hover:text-white transition-colors mb-3">
                     checkout
                   </button>
                   
