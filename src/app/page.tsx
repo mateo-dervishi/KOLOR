@@ -504,7 +504,7 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.1 }}
-                    className="mb-8"
+                    className="mb-10"
                   >
                     <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-4 uppercase">
                       size
@@ -525,9 +525,6 @@ export default function Home() {
                       ))}
                     </div>
                   </motion.div>
-                  
-                  {/* Spacer */}
-                  <div className="h-4" />
 
                   {/* Add to Bag Button */}
                   <motion.button
