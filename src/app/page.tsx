@@ -192,13 +192,13 @@ export default function Home() {
               }}
             />
 
-            <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-10 pb-10 md:pb-14">
+            <div className="absolute inset-0 flex flex-col justify-between p-4 md:p-10 pb-16 md:pb-20">
               <div className="flex justify-between items-start">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
-                  className="font-mono text-[10px] tracking-widest text-grey-mid"
+                  className="font-mono text-[9px] md:text-[10px] tracking-widest text-grey-mid"
                 >
                   {time}
                 </motion.div>
@@ -206,7 +206,7 @@ export default function Home() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.6 }}
-                  className="font-mono text-[10px] tracking-widest text-grey-mid text-right"
+                  className="font-mono text-[9px] md:text-[10px] tracking-widest text-grey-mid text-right"
                 >
                   ss25
                 </motion.div>
@@ -217,12 +217,12 @@ export default function Home() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.3, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                  className="font-display text-[19vw] md:text-[15vw] leading-[0.8] tracking-tight text-black"
+                  className="font-display text-[22vw] md:text-[15vw] leading-[0.8] tracking-tight text-black"
                 >
                   kolor
                 </motion.h1>
 
-                <div className="h-8 mt-6 overflow-hidden">
+                <div className="h-8 mt-4 md:mt-6 overflow-hidden">
                   <AnimatePresence mode="wait">
                     <motion.p
                       key={currentTagline}
@@ -230,7 +230,7 @@ export default function Home() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -20 }}
                       transition={{ duration: 0.5 }}
-                      className="font-mono text-[11px] md:text-[12px] tracking-[0.3em] text-grey-light"
+                      className="font-mono text-[10px] md:text-[12px] tracking-[0.2em] md:tracking-[0.3em] text-grey-light text-center px-4"
                     >
                       {taglines[currentTagline]}
                     </motion.p>
@@ -248,9 +248,9 @@ export default function Home() {
                   <motion.div
                     animate={{ scale: [1, 1.1, 1], opacity: [0.5, 1, 0.5] }}
                     transition={{ duration: 2, repeat: Infinity }}
-                    className="w-2 h-2 rounded-full bg-black mb-4"
+                    className="w-2 h-2 rounded-full bg-black mb-3 md:mb-4"
                   />
-                  <p className="font-mono text-[11px] tracking-[0.3em] text-grey-mid">
+                  <p className="font-mono text-[10px] md:text-[12px] tracking-[0.2em] md:tracking-[0.3em] text-grey-mid">
                     click to add kolor
                   </p>
                 </div>
@@ -342,53 +342,58 @@ export default function Home() {
             className="min-h-screen"
           >
             {/* Header */}
-            <header className="fixed top-0 left-0 right-0 z-50 py-6 md:py-8">
-              {/* Logo & Nav - Centered at page split (50%) */}
-              <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
-                <img 
-                  src="/logo.png" 
-                  alt="KOLOR" 
-                  className="h-12 md:h-16 w-auto mb-3"
-                />
-                <nav className="flex justify-center gap-8 md:gap-12">
-                  <a 
-                    href="#about" 
-                    className="font-mono text-[15px] tracking-[0.2em] text-black hover:opacity-60 transition-opacity"
+            <header className="fixed top-0 left-0 right-0 z-50 py-4 md:py-6 px-4 md:px-8">
+              <div className="flex items-start justify-between">
+                {/* Spacer for mobile balance */}
+                <div className="w-16 md:w-24" />
+                
+                {/* Logo & Nav - Center */}
+                <div className="flex flex-col items-center">
+                  <img 
+                    src="/logo.png" 
+                    alt="KOLOR" 
+                    className="h-8 md:h-14 w-auto mb-2"
+                  />
+                  <nav className="flex justify-center gap-4 md:gap-10">
+                    <a 
+                      href="#about" 
+                      className="font-mono text-[11px] md:text-[14px] tracking-[0.15em] text-black hover:opacity-60 transition-opacity"
+                    >
+                      about
+                    </a>
+                    <a 
+                      href="#contact" 
+                      className="font-mono text-[11px] md:text-[14px] tracking-[0.15em] text-black hover:opacity-60 transition-opacity"
+                    >
+                      contact
+                    </a>
+                  </nav>
+                </div>
+                
+                {/* Bag - Right */}
+                <div className="w-16 md:w-24 flex justify-end">
+                  <button 
+                    onClick={() => setCartOpen(true)}
+                    className="font-mono text-[11px] md:text-[14px] tracking-[0.15em] text-black hover:opacity-60 transition-opacity"
                   >
-                    about
-                  </a>
-                  <a 
-                    href="#contact" 
-                    className="font-mono text-[15px] tracking-[0.2em] text-black hover:opacity-60 transition-opacity"
-                  >
-                    contact
-                  </a>
-                </nav>
-              </div>
-              
-              {/* Bag - Right aligned */}
-              <div className="absolute right-8 md:right-16 top-6 md:top-8">
-                <button 
-                  onClick={() => setCartOpen(true)}
-                  className="font-mono text-[15px] tracking-[0.2em] text-black hover:opacity-60 transition-opacity"
-                >
-                  bag{cartCount > 0 && ` (${cartCount})`}
-                </button>
+                    bag{cartCount > 0 && ` (${cartCount})`}
+                  </button>
+                </div>
               </div>
             </header>
 
             {/* Main Product Layout */}
-            <div className="min-h-screen flex flex-col lg:flex-row">
+            <div className="min-h-screen flex flex-col lg:flex-row pt-20 md:pt-24 lg:pt-0">
               {/* Left - Product Images */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="relative w-full lg:w-1/2 h-[60vh] lg:h-screen bg-white flex items-center justify-center"
+                className="relative w-full lg:w-1/2 h-[50vh] md:h-[60vh] lg:h-screen bg-white flex items-center justify-center"
               >
                 {/* Image Container - Centered with fixed dimensions */}
-                <div className="relative w-full h-full flex items-center justify-center px-8 lg:px-16 py-24 lg:py-32">
-                  <div className="relative w-full h-full max-w-[400px] max-h-[500px] flex items-center justify-center">
+                <div className="relative w-full h-full flex items-center justify-center px-4 md:px-8 lg:px-16 py-8 md:py-16 lg:py-32">
+                  <div className="relative w-full h-full max-w-[280px] md:max-w-[350px] lg:max-w-[400px] max-h-[350px] md:max-h-[450px] lg:max-h-[500px] flex items-center justify-center">
                     <AnimatePresence mode="wait">
                       <motion.img
                         key={`${selectedColor}-${currentImage}`}
@@ -405,11 +410,11 @@ export default function Home() {
                 </div>
 
                 {/* Image Toggle - Bottom Center */}
-                <div className="absolute bottom-8 lg:bottom-12 left-0 right-0 flex flex-col items-center gap-4">
-                  <div className="flex gap-6">
+                <div className="absolute bottom-4 md:bottom-8 lg:bottom-12 left-0 right-0 flex flex-col items-center gap-2 md:gap-4">
+                  <div className="flex gap-4 md:gap-6">
                     <button
                       onClick={() => setCurrentImage('hoodie')}
-                      className={`font-mono text-[10px] tracking-widest transition-all duration-300 pb-1 ${
+                      className={`font-mono text-[10px] md:text-[11px] tracking-widest transition-all duration-300 pb-1 ${
                         currentImage === 'hoodie' 
                           ? 'text-black border-b border-black' 
                           : 'text-grey-mid hover:text-black'
@@ -419,7 +424,7 @@ export default function Home() {
                     </button>
                     <button
                       onClick={() => setCurrentImage('pants')}
-                      className={`font-mono text-[10px] tracking-widest transition-all duration-300 pb-1 ${
+                      className={`font-mono text-[10px] md:text-[11px] tracking-widest transition-all duration-300 pb-1 ${
                         currentImage === 'pants' 
                           ? 'text-black border-b border-black' 
                           : 'text-grey-mid hover:text-black'
@@ -428,7 +433,7 @@ export default function Home() {
                       pants
                     </button>
                   </div>
-                  <p className="font-mono text-[9px] tracking-[0.2em] text-grey-mid">
+                  <p className="font-mono text-[9px] md:text-[10px] tracking-[0.2em] text-grey-mid">
                     {product.colors[selectedColor].name}
                   </p>
                 </div>
@@ -440,7 +445,7 @@ export default function Home() {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
-                className="w-full lg:w-1/2 flex items-center justify-center p-8 md:p-12 lg:p-16 xl:p-20 bg-white overflow-y-auto"
+                className="w-full lg:w-1/2 flex items-start lg:items-center justify-center p-6 md:p-10 lg:p-16 xl:p-20 bg-white overflow-y-auto"
               >
                 <div className="w-full max-w-sm">
                   {/* Collection Tag */}
@@ -458,7 +463,7 @@ export default function Home() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8 }}
-                    className="font-mono text-3xl md:text-4xl font-normal mb-4 tracking-tight"
+                    className="font-mono text-2xl md:text-3xl lg:text-4xl font-normal mb-4 tracking-tight"
                   >
                     kolor tracksuit
                   </motion.h1>
@@ -468,7 +473,7 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.9 }}
-                    className="font-mono text-xl text-black mb-8"
+                    className="font-mono text-lg md:text-xl text-black mb-6 md:mb-8"
                   >
                     ${product.price}
                   </motion.p>
@@ -759,24 +764,24 @@ export default function Home() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'tween', duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed top-0 right-0 bottom-0 z-[301] w-full max-w-md bg-white border-l border-grey-pale flex flex-col"
+              className="fixed top-0 right-0 bottom-0 z-[301] w-full md:max-w-md bg-white border-l border-grey-pale flex flex-col"
             >
-              <div className="flex items-center justify-between p-8 border-b border-grey-pale">
+              <div className="flex items-center justify-between p-5 md:p-8 border-b border-grey-pale">
                 <div>
-                  <h2 className="font-mono text-xl tracking-wide">bag</h2>
-                  <p className="font-mono text-xs tracking-widest text-grey-mid mt-2">
+                  <h2 className="font-mono text-lg md:text-xl tracking-wide">bag</h2>
+                  <p className="font-mono text-[10px] md:text-xs tracking-widest text-grey-mid mt-1 md:mt-2">
                     {cartCount} {cartCount === 1 ? 'item' : 'items'}
                   </p>
                 </div>
                 <button
                   onClick={() => setCartOpen(false)}
-                  className="font-mono text-sm tracking-widest text-grey-mid hover:text-black transition-colors"
+                  className="font-mono text-xs md:text-sm tracking-widest text-grey-mid hover:text-black transition-colors"
                 >
                   close
                 </button>
               </div>
 
-              <div className="flex-1 overflow-y-auto p-8">
+              <div className="flex-1 overflow-y-auto p-5 md:p-8">
                 {cart.length === 0 ? (
                   <div className="h-full flex flex-col items-center justify-center text-center">
                     <div className="w-16 h-16 border border-grey-pale rounded-full flex items-center justify-center mb-8">
@@ -862,7 +867,7 @@ export default function Home() {
               </div>
 
               {cart.length > 0 && (
-                <div className="p-8 border-t border-grey-pale">
+                <div className="p-5 md:p-8 border-t border-grey-pale">
                   <div className="flex items-center justify-between mb-4">
                     <span className="font-mono text-sm tracking-widest text-grey-mid">
                       subtotal
