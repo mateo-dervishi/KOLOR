@@ -478,9 +478,9 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1 }}
-                    className="mb-5"
+                    className="mb-8"
                   >
-                    <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-3 uppercase">
+                    <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-4 uppercase">
                       color — {product.colors[selectedColor].name.toLowerCase()}
                     </p>
                     <div className="flex gap-3">
@@ -504,12 +504,12 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.1 }}
-                    className="mb-5"
+                    className="mb-8"
                   >
-                    <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-3 uppercase">
+                    <p className="font-mono text-xs tracking-[0.15em] text-grey-mid mb-4 uppercase">
                       size
                     </p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 mb-6">
                       {product.sizes.map((size) => (
                         <button
                           key={size}
